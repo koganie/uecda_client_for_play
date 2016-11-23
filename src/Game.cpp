@@ -204,7 +204,7 @@ void Game::connectToServer(){
         //return(-1);
     }
     /* ポートとアドレスの設定 */
-    bzero((char*)&g_client_addr,sizeof(g_client_addr));
+    memset((char*)&g_client_addr, 0, sizeof(g_client_addr));
     g_client_addr.sin_family = PF_INET;
     g_client_addr.sin_port = htons(port);
     g_client_addr.sin_addr.s_addr = inet_addr(server_name);
